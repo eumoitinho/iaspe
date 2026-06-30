@@ -1,0 +1,26 @@
+
+.navbar-brand > img:nth-child(1){
+    max-width:180px;
+}
+.bg-base-secondary {
+	background: #0B365B !important;
+}
+.nav-tabs .nav-link.active {
+	color: #0B365B !important;
+}
+.navbar-light .navbar-nav .nav-link {
+	color: #0B365B !important;
+	font-weight: 500 !important;
+}
+.text-base, h5.card-header a {
+	color: #0B365B !important;
+}
+.nav-tabs .nav-link::before {
+	background-color: #0B365B;
+}
+.text-info {
+	color: #0B365B !important;
+}
+.fe-chevron-right:before {
+   color: #0B365B !important;
+}

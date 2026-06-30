@@ -1,26 +1,25 @@
-@import "tailwindcss";
+/*
+ * Global styles for the IASPE site.
+ *
+ * The homepage is styled entirely by the self-hosted template11 theme CSS
+ * (Bootstrap 4 + custom/style/local), loaded in layout.tsx. Tailwind is
+ * intentionally NOT imported here — its preflight reset would conflict with
+ * Bootstrap and break the pixel-perfect match.
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * The theme hides #preloader on the window `load` event via custom.js. Because
+ * we load the theme scripts on the client after hydration (load has already
+ * fired), that handler never runs — so we fade the preloader out via CSS as a
+ * safety net. custom.js fading it out as well is harmless (same end state).
+ */
+@keyframes iaspe-hide-preloader {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+#preloader {
+  animation: iaspe-hide-preloader 0.4s ease 0.8s forwards;
 }
