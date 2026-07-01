@@ -23,7 +23,7 @@ export default async function CapacitacoesPage() {
   return (
     <>
       {/* Page title band */}
-      <section className="py-4 py-sm-5 bg-light">
+      <section className="below-header pb-4 pb-sm-5 bg-light">
         <div className="container">
           <div className="row align-items-center">
             <div className="col">

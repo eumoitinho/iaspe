@@ -80,7 +80,7 @@ export default async function CapacitacaoPage({
   return (
     <>
       {/* Title band */}
-      <section className="py-4 py-sm-5 bg-light">
+      <section className="below-header pb-4 pb-sm-5 bg-light">
         <div className="container">
           <a
             href="/capacitacoes"

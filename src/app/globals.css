@@ -23,3 +23,19 @@
 #preloader {
   animation: iaspe-hide-preloader 0.4s ease 0.8s forwards;
 }
+
+/*
+ * The theme header is `position: fixed` (height ~100px, top 5px) and floats
+ * over the content — on the homepage it intentionally overlaps the hero band.
+ * Inner pages have no hero, so their first section must clear the header.
+ * Apply `.below-header` to the first section of any inner page.
+ */
+.below-header {
+  padding-top: 130px;
+}
+
+@media (max-width: 991.98px) {
+  .below-header {
+    padding-top: 108px;
+  }
+}
