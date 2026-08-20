@@ -83,7 +83,7 @@ export default async function CapacitacaoPage({
       <section className="below-header pb-4 pb-sm-5 bg-light">
         <div className="container">
           <a
-            href="/capacitacoes"
+            href="/"
             className="text-14 text-700 link-underline d-inline-block mb-2"
           >
             <i className="fe fe-arrow-left mr-1"></i> Capacitações

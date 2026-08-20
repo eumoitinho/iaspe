@@ -41,13 +41,21 @@ export default function Header() {
                   <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ml-md-auto">
                       {NAV_LINKS.map((l) => (
-                        <li key={l.accessKey} className="nav-item ">
+                        <li
+                          key={l.accessKey}
+                          className={l.current ? "nav-item active" : "nav-item "}
+                        >
                           <a
-                            className="nav-link text-500"
+                            className={
+                              l.current
+                                ? "nav-link text-700 active"
+                                : "nav-link text-500"
+                            }
                             tabIndex={l.tabIndex}
                             accessKey={l.accessKey}
                             href={l.href}
                             title={l.title}
+                            aria-current={l.current ? "page" : undefined}
                           >
                             {l.label}
                           </a>

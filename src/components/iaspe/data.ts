@@ -1,8 +1,11 @@
-// Static content for the IASPE homepage, mirrored from
-// https://portal.iaspeconcursos.com.br/ (template11 theme).
-// Later this can be sourced from Sanity.
+// Static content for this subdomain (capacitacao.iaspeconcursos.com.br), which
+// serves ONLY the capacitações pages and borrows the template11 theme from
+// https://portal.iaspeconcursos.com.br/. Every navigation item other than
+// "Capacitações" points back to the main portal on purpose — this site must not
+// serve cloned copies of the portal's pages.
 
 export const SITE = {
+  // Logo / brand click goes back to the main portal.
   baseUrl: "https://portal.iaspeconcursos.com.br/",
   logo: "https://cdn.iaspeconcursos.com.br/prestador/logo.png",
   candidatoUrl: "https://candidato.iaspeconcursos.com.br/",
@@ -15,15 +18,17 @@ export type NavLink = {
   accessKey: string;
   tabIndex: number;
   external?: boolean;
+  /** Marks the only item served by this subdomain. */
+  current?: boolean;
 };
 
-// Primary menu links
+// Primary menu links, mirroring the portal's own menu order.
 export const NAV_LINKS: NavLink[] = [
-  { label: "Sobre", href: "https://portal.iaspeconcursos.com.br/sobre", title: "Clique para ir A empresa", accessKey: "1", tabIndex: 1 },
-  { label: "Concursos e seletivos", href: "https://portal.iaspeconcursos.com.br/edital", title: "Clique para ver os Concursos e seletivos", accessKey: "2", tabIndex: 2 },
-  { label: "Serviços", href: "https://portal.iaspeconcursos.com.br/servicos", title: "Clique para conhecer nossos serviços", accessKey: "3", tabIndex: 3 },
-  { label: "Notícias", href: "https://portal.iaspeconcursos.com.br/noticia", title: "Clique para ir as Notícias", accessKey: "4", tabIndex: 4 },
-  { label: "Capacitações", href: "/capacitacoes", title: "Cursos de capacitação do IASPE", accessKey: "c", tabIndex: 5 },
+  { label: "Sobre", href: "https://portal.iaspeconcursos.com.br/sobre", title: "Clique para ir A empresa", accessKey: "1", tabIndex: 1, external: true },
+  { label: "Concursos e seletivos", href: "https://portal.iaspeconcursos.com.br/edital", title: "Clique para ver os Concursos e seletivos", accessKey: "2", tabIndex: 2, external: true },
+  { label: "Serviços", href: "https://portal.iaspeconcursos.com.br/servicos", title: "Clique para conhecer nossos serviços", accessKey: "3", tabIndex: 3, external: true },
+  { label: "Notícias", href: "https://portal.iaspeconcursos.com.br/noticia", title: "Clique para ir as Notícias", accessKey: "4", tabIndex: 4, external: true },
+  { label: "Capacitações", href: "/", title: "Cursos de capacitação do IASPE", accessKey: "c", tabIndex: 5, current: true },
 ];
 
 // Secondary links (hidden by default via `termoInfo d-none`)
